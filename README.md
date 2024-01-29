@@ -1,6 +1,12 @@
-## **基于tkinter的简易界面的下载歌曲程序**
+| [介绍](#section1)                   | [使用（新）](#section2)                 | [使用（旧）](#section3)  | [函数](#section4)  |
+| ----------------------------------- | --------------------------------------- | ------------------------ | ------------------ |
+| 基于tkinter的简易界面的下载歌曲程序 | 只需复制网址1。通过网址1得到网址2和标题 | 复制网址1和网址2进行处理 | 程序的函数功能介绍 |
 
-以网站`https://www.kumeiwp.com/`的html结构完成的自动提取歌曲标题和下载歌曲。
+
+
+## **基于tkinter的简易界面的下载歌曲程序**<a name="section1"></a>
+
+以网站[`https://www.kumeiwp.com/`]([搜索网盘 酷美网盘 支持外链 免费网盘 (kumeiwp.com)](https://www.kumeiwp.com/search.html))的html结构完成的自动提取歌曲标题和下载歌曲。
 
 支持：
 
@@ -16,7 +22,7 @@
 
 ![image-20240129165224016](README.assets/image-20240129165224016.png)
 
-## 使用（新）
+## 使用（新）<a name="section2"></a>
 
 可以用python脚本，也可以在dist目录下用可执行文件（`semi-automatic_audio_saving _tool.exe`）运行。
 
@@ -50,7 +56,7 @@
 
 ![image-20240129170126233](README.assets/image-20240129170126233.png)
 
-## 使用（旧）
+## 使用（旧）<a name="section3"></a>
 
 可以用python脚本，也可以在dist目录下用可执行文件（`semi-automatic_audio_saving _tool.exe`）运行。
 
@@ -96,7 +102,7 @@
 
 ![image-20240129170126233](README.assets/image-20240129170126233.png)
 
-## 函数
+## 函数<a name="section4"></a>
 
 - 得到下载网址
 
@@ -136,3 +142,4 @@ def browse_path():
 
 
 
+[**返回上部**](#section1)
