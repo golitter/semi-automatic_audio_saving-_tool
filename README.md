@@ -24,7 +24,7 @@
 
 ## 使用（新）<a name="section2"></a>
 
-可以用python脚本，也可以在dist目录下用可执行文件（`semi-automatic_audio_saving _tool.exe`）运行。
+可以用python脚本，也可以用可执行文件（`semi-automatic_audio_saving _tool.exe`）运行。
 
 以[理查德克莱德曼 - 天空之城钢琴曲.mp3 免费下载 酷美网盘 支持外链 (kumeiwp.com)](https://www.kumeiwp.com/file/160494.html)下载该歌曲作为一个例子。
 
@@ -58,7 +58,7 @@
 
 ## 使用（旧）<a name="section3"></a>
 
-可以用python脚本，也可以在dist目录下用可执行文件（`semi-automatic_audio_saving _tool.exe`）运行。
+可以用python脚本，也可以用可执行文件（`semi-automatic_audio_saving _tool.exe`）运行。
 
 以[理查德克莱德曼 - 天空之城钢琴曲.mp3 免费下载 酷美网盘 支持外链 (kumeiwp.com)](https://www.kumeiwp.com/file/160494.html)下载该歌曲作为一个例子。
 
