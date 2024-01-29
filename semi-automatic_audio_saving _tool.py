@@ -4,6 +4,39 @@ import requests
 from bs4 import BeautifulSoup
 import os
 
+# 错误信息处理
+# 设置为__NULL__前缀
+prefix = "__NULL__"
+
+
+# 通过第一个网址得到第二个网址
+# 找到下载链接
+def get_second_link(url):
+    try:
+        # 发送GET请求获取网页内容
+        response = requests.get(url)
+        
+        # 检查响应状态码
+        if response.status_code == 200:
+            # 使用Beautiful Soup解析HTML
+            soup = BeautifulSoup(response.text, 'html.parser')
+            
+            # 找到第一个class为"layui-col-md12"的div标签
+            div_tag = soup.find('div', class_='layui-col-md12')
+            
+            # 找到第一个a标签并获取其超链接
+            if div_tag:
+                a_tag = div_tag.find('a')
+                if a_tag:
+                    return a_tag['href']
+                else:
+                    return "__NULL__ 未找到a标签"
+            else:
+                return "__NULL__未找到div标签"
+        else:
+            return "__NULL__ 请求失败，状态码：" + str(response.status_code)
+    except Exception as e:
+        return "__NULL__发生异常：" + str(e)
 
 # 得到网页的标题
 def get_title(url):
@@ -20,7 +53,8 @@ def get_title(url):
             if title_tag:
                 return title_tag.get_text()
             else:
-                return "未找到标题"
+                messagebox.showerror("错误", "未找到标题，请自行输入")
+                return ""
         else:
             return "__NULL__ 请求失败，状态码：" + str(response.status_code)
     except Exception as e:
@@ -43,15 +77,23 @@ def download_audio(url, save_path):
     except Exception as e:
         return "__NULL__ 发生异常：" + str(e)
 
-# 处理网址，得到标题
+# 处理第一个网址
 def process_url1():
     url1 = entry_url1.get()
     title = get_title(url1)
     if '__NULL__' in title:
-        messagebox.showerror("错误", "网址1解析错误")
+        messagebox.showerror("错误", title[len(prefix):])
     else:
         entry_title.delete(0, 'end')
         entry_title.insert(0, title)
+    
+    url2 = get_second_link(url1)
+    if '__NULL__' in url2:
+        messagebox.showerror("错误", "未发现下载网址，请重试或手动处理")
+    else:
+        entry_url2.delete(0, 'end')
+        entry_url2.insert(0, url2)
+
 
 # 保存音频
 def process_url2():
@@ -62,7 +104,7 @@ def process_url2():
     result = download_audio(url2, save_path)
     print(result, save_path)
     if '__NULL__' in result:
-        messagebox.showerror("错误", "网址2解析错误")
+        messagebox.showerror("错误", result[len(prefix):])
     else:
         messagebox.showinfo("提示", "文件下载成功！")
         entry_url1.delete(0, 'end')
