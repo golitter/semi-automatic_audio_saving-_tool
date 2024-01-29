@@ -6,7 +6,7 @@
 
 ## **基于tkinter的简易界面的下载歌曲程序**<a name="section1"></a>
 
-以网站[`https://www.kumeiwp.com/`]([搜索网盘 酷美网盘 支持外链 免费网盘 (kumeiwp.com)](https://www.kumeiwp.com/search.html))的html结构完成的自动提取歌曲标题和下载歌曲。
+以网站[`https://www.kumeiwp.com/`](https://www.kumeiwp.com/search.html)的html结构完成的自动提取歌曲标题和下载歌曲。
 
 支持：
 
