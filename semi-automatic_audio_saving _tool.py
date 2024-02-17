@@ -85,7 +85,7 @@ def process_url1():
         messagebox.showerror("错误", title[len(prefix):])
     else:
         entry_title.delete(0, 'end')
-        entry_title.insert(0, title)
+        entry_title.insert(0, title.split(".mp3")[0])
     
     url2 = get_second_link(url1)
     if '__NULL__' in url2:
