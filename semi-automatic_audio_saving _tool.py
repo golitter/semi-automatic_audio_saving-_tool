@@ -162,6 +162,10 @@ entry_path.grid(row=5, column=1, padx=5, pady=5)
 button_browse = tk.Button(root, text="浏览", command=browse_path)
 button_browse.grid(row=5, column=2, padx=5, pady=5)
 
+# 主窗口一直显示在应用程序的最顶层.
+root.lift()
+root.attributes('-topmost', True)
+
 
 # 运行主循环
 root.mainloop()
