@@ -6,6 +6,13 @@ update：
 entry_title.insert(0, title.split(".mp3")[0])
 ```
 
+2024年2月21日：主窗口一直显示在应用程序的最顶层
+
+```python
+root.lift()
+root.attributes('-topmost', True)
+```
+
 
 
 | [介绍](#section1)                   | [使用（新）](#section2)                 | [使用（旧）](#section3)  | [函数](#section4)  |
